@@ -14,10 +14,11 @@ Gem::Specification.new do |s|
   s.description = "Collections of helpers and templates for admin areas"
   s.license     = "MIT"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib,vendor}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "rails", "~> 4.1.0.rc1"
+  s.add_dependency "sass-rails", "~> 4.0.1"
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'capybara'
   s.add_development_dependency "sqlite3"
