@@ -25,3 +25,52 @@ ShowFor.setup do |config|
 end
 
 ```
+
+# Personalize Rails confirm dialog
+```javascript
+var myCustomConfirmBox = function(message, callback) {
+  var options;
+  options = {
+    message: message,
+    title: "Confirmação",
+    buttons: {
+      success: {
+        label: "Confirmar",
+        className: "btn-success",
+        callback: callback
+      },
+      danger: {
+        label: "Cancelar",
+        className: "btn-danger"
+      }
+    }
+  };
+
+  return bootbox.dialog(options);
+};
+
+$.rails.allowAction = function(element) {
+  var answer, callback, message;
+  message = element.data("confirm");
+  if (!message) {
+    return true;
+  }
+  answer = false;
+  callback = void 0;
+  if ($.rails.fire(element, "confirm")) {
+    myCustomConfirmBox(message, function() {
+      var oldAllowAction;
+      callback = $.rails.fire(element, "confirm:complete", [answer]);
+      if (callback) {
+        oldAllowAction = $.rails.allowAction;
+        $.rails.allowAction = function() {
+          return true;
+        };
+        element.trigger("click");
+        return $.rails.allowAction = oldAllowAction;
+      }
+    });
+  }
+  return false;
+};
+```
