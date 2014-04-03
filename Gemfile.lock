@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     codus_templates (0.0.1)
-      rails (~> 4.1.0.rc1)
+      rails (~> 4.1.0.rc2)
       sass-rails (~> 4.0.1)
 
 GEM
