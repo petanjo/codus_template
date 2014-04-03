@@ -1,3 +1,7 @@
+# How to install
+Example:
+gem 'codus_templates', :git => 'git://github.com/rails/rails.git', :tag => 'v1.4'
+
 # ShowFor initializer
 ```ruby
 
