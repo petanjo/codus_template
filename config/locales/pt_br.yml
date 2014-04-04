@@ -1,0 +1,8 @@
+pt_br:
+  codus_templates:
+    header_titles:
+      defaults:
+        index: 'Listando'
+        edit: 'Editando'
+        new: 'Adicionando'
+        show: 'Visualizando'

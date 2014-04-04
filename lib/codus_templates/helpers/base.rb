@@ -28,29 +28,36 @@ module CodusTemplates
 
       def get_title_text_for_header_section
         begin
-          resource_name = controller_name.singularize.capitalize.constantize
+          resource_class = controller_name.singularize.capitalize.constantize
+          resource_name = resource_class.model_name.human
+          if params[:action].match(/index/)
+            resource_name = resource_name.pluralize
+          end
         rescue
           resource_name = ""
         end
 
-        if params[:action].match(/edit|update/)
-          action_name = 'Editando'
-          resource_name = resource_class.model_name.human
-        elsif params[:action].match(/show/)
-          action_name = 'Visualizando'
-          resource_name = resource_class.model_name.human
-        elsif params[:action].match(/remove/)
-          action_name = 'Removendo'
-          resource_name = resource_class.model_name.human.pluralize
-        elsif params[:action].match(/index/)
-          action_name = 'Listando'
-          resource_name = resource_class.model_name.human.pluralize
-        else
-          action_name = 'Adicionando'
-          resource_name = resource_class.model_name.human.pluralize
+        begin
+          equivalent_actions_hash = {
+            "edit" => :update,
+            "new" => :create,
+            "remove" => :destroy
+          }
+
+          if equivalent_actions_hash.has_key?(params[:action])
+            action_text = I18n.t!(params[:action],
+              scope: [:codus_templates, :header_titles, :controllers, params[:controller].parameterize(".")],
+              default: equivalent_actions_hash[params[:action]])
+          else
+            action_text = I18n.t!(params[:action],
+              scope: [:codus_templates, :header_titles, :controllers, params[:controller].parameterize(".")])
+          end
+        rescue I18n::MissingTranslationData => ex
+          action_text = I18n.t(params[:action],
+            scope: [:codus_templates, :header_titles, :defaults])
         end
 
-        "#{action_name} #{resource_name}"
+        "#{action_text} #{resource_name}"
       end
 
       def multilanguage_attribute_field_for(attribute_name, simple_form_builder, custom_options = {})

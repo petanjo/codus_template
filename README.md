@@ -10,6 +10,26 @@ Include the helper in your base helper. Example:
 include CodusTemplates::Helpers::AceAdmin
 ```
 
+# Translates
+You can personalize the header section titles and default buttons following the pattern:
+
+```yaml
+pt_br:
+  codus_templates:
+    header_titles:
+      defaults:
+        index: 'Listando'
+        edit: 'Editando'
+        new: 'Adicionando'
+        show: 'Visualizando'
+      controllers:
+        controller_name:
+          edit: 'My custom edit title'
+        namespace:
+          controller_name:
+            index: 'My custom index title'
+``
+
 # ShowFor initializer
 ```ruby
 
