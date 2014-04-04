@@ -46,14 +46,14 @@ module CodusTemplates
 
       def get_right_links_for_header_section
         begin
-          right_links = custom_options.has_key?(:right_links) ? '' : link_to("Voltar", {action: 'index'}, {class: 'btn btn-sm btn-primary pull-right'})
+          right_links = custom_options.has_key?(:right_links) ? '' : link_to(get_translation_for_button(:back), {action: 'index'}, {class: 'btn btn-sm btn-primary pull-right'})
         rescue
           right_links = ""
         end
 
         if params[:action].match(/index/)
           begin
-            right_links = link_to('<span class="glyphicon glyphicon-plus"></span> Adicionar'.html_safe, { action: :new }, class: 'btn btn-sm btn-success pull-right cpy-add-link')
+            right_links = link_to("<span class='glyphicon glyphicon-plus'></span> #{get_translation_for_button(:add)}".html_safe, { action: :new }, class: 'btn btn-sm btn-success pull-right cpy-add-link')
           rescue
             right_links = ""
           end
@@ -64,8 +64,8 @@ module CodusTemplates
 
       def form_submit_section(custom_options = {})
         options = {
-          back_button_name: "Voltar",
-          submit_button_name: "Salvar"
+          back_button_name: get_translation_for_button(:back),
+          submit_button_name: get_translation_for_button(:save)
         }.merge(custom_options)
         content_tag(:div, class: 'form-actions wizard-actions form-buttons') do
           begin
@@ -80,8 +80,8 @@ module CodusTemplates
 
       def show_panel_buttons_section(custom_options = {})
         options = {
-          back_button_name: "Voltar",
-          edit_button_name: "Editar"
+          back_button_name: get_translation_for_button(:back),
+          edit_button_name: get_translation_for_button(:edit)
         }.merge(custom_options)
 
         buttons = content_tag(:div, class: 'wizard-actions') do

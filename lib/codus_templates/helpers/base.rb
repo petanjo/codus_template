@@ -111,6 +111,14 @@ module CodusTemplates
       def flag_image_for(language_acronym)
         image_tag("flags/#{language_acronym.to_s}.png")
       end
+
+      def get_translation_for_button(button_name)
+        begin
+          I18n.t!(button_name, scope: [:codus_templates, :buttons_titles, :controllers, params[:controller].parameterize(".")])
+        rescue I18n::MissingTranslationData => ex
+          I18n.t(button_name.to_sym, scope: [:codus_templates, :buttons_titles, :defaults])
+        end
+      end
     end
   end
 end

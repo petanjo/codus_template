@@ -1,5 +1,10 @@
 pt_br:
   codus_templates:
+    buttons_titles:
+      defaults:
+        add: 'Adicionar'
+        save: 'Salvar'
+        back: 'Voltar'
     header_titles:
       defaults:
         index: 'Listando'

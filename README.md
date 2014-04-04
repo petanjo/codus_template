@@ -16,6 +16,14 @@ You can personalize the header section titles and default buttons following the 
 ```yaml
 pt_br:
   codus_templates:
+    buttons_titles:
+      defaults:
+        add: 'Adicionar'
+        save: 'Salvar'
+        back: 'Voltar'
+      controllers:
+        controller_name:
+          add: 'My custom add title for a controller'
     header_titles:
       defaults:
         index: 'Listando'
