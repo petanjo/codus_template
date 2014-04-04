@@ -5,6 +5,7 @@ pt_br:
         add: 'Adicionar'
         save: 'Salvar'
         back: 'Voltar'
+        edit: 'Editar'
     header_titles:
       defaults:
         index: 'Listando'
