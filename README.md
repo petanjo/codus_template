@@ -4,6 +4,12 @@
 gem 'codus_templates', :git => 'git://github.com/rails/rails.git', :tag => 'v1.4'
 ```
 
+# How to use the layout helpers
+Include the helper in your base helper. Example:
+```ruby
+include CodusTemplates::Helpers::AceAdmin
+```
+
 # ShowFor initializer
 ```ruby
 

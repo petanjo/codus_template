@@ -2,8 +2,7 @@ PATH
   remote: .
   specs:
     codus_templates (0.0.1)
-      rails (~> 4.1.0.rc2)
-      sass-rails (~> 4.0.1)
+      sass-rails (~> 4.0)
 
 GEM
   remote: https://rubygems.org/
@@ -123,5 +122,6 @@ PLATFORMS
 DEPENDENCIES
   capybara
   codus_templates!
+  rails (~> 4.1.0.rc2)
   rspec-rails
   sqlite3

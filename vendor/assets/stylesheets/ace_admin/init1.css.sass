@@ -8,3 +8,8 @@
 
 //*= require ./custom_components/modal
 //*= require ./custom_components/photo-list
+//*= require_self
+
+@for $i from 1 through 100
+  .size-#{$i}-percent
+    width: 1% * $i

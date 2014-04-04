@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module CodusTemplates
   module Helpers
     module AceAdmin
