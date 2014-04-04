@@ -20,7 +20,7 @@ module CodusTemplates
         }.merge(custom_options)
 
         content_tag(:div, class: options[:class], id: options[:id]) do
-          title = content_tag(:div, "<h3 class='lighter'>#{options[:name]}</h4>".html_safe , class: 'widget-header widget-header-blue widget-header-flat')
+          title = content_tag(:div, "<h3 class='lighter'>#{options[:name]}</h3>".html_safe , class: 'widget-header widget-header-blue widget-header-flat')
           body = content_tag(:div, class: 'widget-body') do
             content_tag(:div, capture(&block),class: 'widget-main')
           end
@@ -71,7 +71,7 @@ module CodusTemplates
           rescue
             back_link = link_to("<i class='icon-arrow-left'></i> #{options[:back_button_name]}".html_safe, :back, {class: 'btn btn-prev'})
           end
-          submit_button = "<button class='btn btn-success btn-next cpy-submit-button'>#{options[:submit_button_name]} <i class='icon-arrow-right icon-on-right'></i> ".html_safe
+          submit_button = "<button class='btn btn-success btn-next cpy-submit-button'>#{options[:submit_button_name]} <i class='icon-arrow-right icon-on-right'></i></button> ".html_safe
           back_link + submit_button
         end
       end
