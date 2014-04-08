@@ -1,7 +1,7 @@
 # How to install
 
 ```ruby
-gem 'codus_templates', :git => 'git://github.com/rails/rails.git', :tag => 'v1.4'
+gem 'codus_templates', '0.0.1', git: 'https://viniciusoyama@bitbucket.org/codustecnologia/codus_templates.git', tag: 'v0.1'
 ```
 
 # How to use the layout helpers
@@ -26,10 +26,10 @@ pt_br:
           add: 'My custom add title for a controller'
     header_titles:
       defaults:
-        index: 'Listando'
-        edit: 'Editando'
-        new: 'Adicionando'
-        show: 'Visualizando'
+        index: 'Listando %{resource_name}'
+        edit: 'Editando %{resource_name}'
+        new: 'Adicionando %{resource_name}'
+        show: 'Visualizando %{resource_name}'
       controllers:
         controller_name:
           edit: 'My custom edit title'

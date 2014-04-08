@@ -8,7 +8,7 @@ pt_br:
         edit: 'Editar'
     header_titles:
       defaults:
-        index: 'Listando'
-        edit: 'Editando'
-        new: 'Adicionando'
-        show: 'Visualizando'
+        index: 'Listando %{resource_name}'
+        edit: 'Editando %{resource_name}'
+        new: 'Adicionando %{resource_name}'
+        show: 'Visualizando %{resource_name}'

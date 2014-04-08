@@ -45,19 +45,21 @@ module CodusTemplates
           }
 
           if equivalent_actions_hash.has_key?(params[:action])
-            action_text = I18n.t!(params[:action],
+            heeader_title = I18n.t!(params[:action],
               scope: [:codus_templates, :header_titles, :controllers, params[:controller].parameterize(".")],
-              default: equivalent_actions_hash[params[:action]])
+              default: equivalent_actions_hash[params[:action]], resource_name: resource_name)
           else
-            action_text = I18n.t!(params[:action],
-              scope: [:codus_templates, :header_titles, :controllers, params[:controller].parameterize(".")])
+            heeader_title = I18n.t!(params[:action],
+              scope: [:codus_templates, :header_titles, :controllers, params[:controller].parameterize(".")],
+              resource_name: resource_name)
           end
         rescue I18n::MissingTranslationData => ex
-          action_text = I18n.t(params[:action],
-            scope: [:codus_templates, :header_titles, :defaults])
+          heeader_title = I18n.t(params[:action],
+            scope: [:codus_templates, :header_titles, :defaults],
+            resource_name: resource_name)
         end
 
-        "#{action_text} #{resource_name}"
+        "#{heeader_title}"
       end
 
       def multilanguage_attribute_field_for(attribute_name, simple_form_builder, custom_options = {})
