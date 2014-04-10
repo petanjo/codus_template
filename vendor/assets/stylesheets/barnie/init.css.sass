@@ -1,0 +1,10 @@
+//*= require ./bootstrap.min
+//*= require ./font-awesome.min
+//*= require ./less-style.css
+//*= require ./style
+
+//*= require_self
+
+@for $i from 1 through 100
+  .size-#{$i}-percent
+    width: 1% * $i
