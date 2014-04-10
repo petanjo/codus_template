@@ -475,6 +475,7 @@ form label{
 
 .sidebar .side-nav ul li a{
 	color:#aaa;
+	display: block;
 }
 
 .sidebar .side-nav ul li a:hover,
