@@ -1,0 +1,30 @@
+
+= header_section
+
+
+table.table.table-bordered.table-striped.table-highlight
+  thead
+    tr
+      th.size-5-percent.text-center Id
+      th.size-20-percent.text-center Name
+      th.size-20-percent.text-center Email
+      th.size-20-percent.text-center Age
+      th.size-20-percent.text-center Actions
+
+  tbody
+  - @users.each do |user|
+    tr
+      td.text-center
+        = user.id
+      td.text-center
+        = user.name
+      td.text-center
+        = user.email
+      td.text-center
+        = user.age
+
+      td.text-center
+        = link_to 'details', barnie_user_path(user.id), class: 'btn btn-sm btn-default'
+        = link_to 'edit', edit_barnie_user_path(user.id), class: 'btn btn-sm btn-info'
+        = link_to "delete", { :action => 'destroy', :id => user.id}, :method => :delete, data: { confirm: 'Are you sure to destroy this user? His publications will not be deleted!'}, class: 'btn btn-sm btn-danger'
+

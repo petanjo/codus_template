@@ -1,0 +1,668 @@
+| <!DOCTYPE html>
+html
+  head
+
+  = stylesheet_link_tag    'barnie/init', media: 'all'
+  = javascript_include_tag    'barnie/init'
+
+  body
+    .outer
+      /! Sidebar starts
+      .sidebar
+        .sidey
+          /! Logo
+          .logo
+            h1
+              a href="index.html"
+                i.fa.fa-desktop.br-red
+                | Barnie
+                span It's Legendary
+          /! Sidebar navigation starts
+          /! Responsive dropdown
+          .sidebar-dropdown
+            a.br-red href="#"
+              i.fa.fa-bars
+          .side-nav
+            .side-nav-block
+              /! Sidebar heading
+              h4 Main
+              /! Sidebar links
+              ul.list-unstyled
+                li
+                  a href="index.html"
+                    i.fa.fa-desktop
+                    | Dashboard
+                li
+                  a href="widgets.html"
+                    i.fa.fa-bullseye
+                    | Widget
+                    span.badge.badge-danger.pull-right 6
+                li
+                  a href="charts.html"
+                    i.fa.fa-signal
+                    | Charts
+                    span.badge.badge-info.pull-right 5
+                li
+                  a href="ui.html"
+                    i.fa.fa-wrench
+                    | UI
+                /! Mainmenu with submenu
+                li.has_submenu
+                  a href="#"
+                    i.fa.fa-file
+                    | Pages
+                    span.nav-caret.fa.fa-caret-down
+                  /! Submenu
+                  ul.list-unstyled
+                    li
+                      a href="calendar.html"
+                        i.fa.fa-angle-double-right
+                        | Calendar
+                    li
+                      a href="errorlog.html"
+                        i.fa.fa-angle-double-right
+                        | Error Logs
+                    li
+                      a href="gallery.html"
+                        i.fa.fa-angle-double-right
+                        | Gallery
+                    li
+                      a href="invoice.html"
+                        i.fa.fa-angle-double-right
+                        | Invoice
+                    li
+                      a href="media.html"
+                        i.fa.fa-angle-double-right
+                        | Media
+                    li
+                      a href="posts.html"
+                        i.fa.fa-angle-double-right
+                        | Posts
+                    li
+                      a href="statement.html"
+                        i.fa.fa-angle-double-right
+                        | Statement
+                li
+                  a href="users.html"
+                    i.fa.fa-user
+                    | Users
+                /! Mainmenu with submenu
+                li.has_submenu
+                  a href="#"
+                    i.fa.fa-file-text-o
+                    | Forms
+                    span.nav-caret.fa.fa-caret-down
+                  /! Submenu
+                  ul.list-unstyled
+                    li
+                      a href="form.html"
+                        i.fa.fa-angle-double-right
+                        | General Form
+                    li
+                      a href="form-validate.html"
+                        i.fa.fa-angle-double-right
+                        | Validate Form
+                    li
+                      a href="form-wizard.html"
+                        i.fa.fa-angle-double-right
+                        | Wizard Form
+                /! Mainmenu with submenu
+                li.has_submenu
+                  a href="#"
+                    i.fa.fa-table
+                    | Tables
+                    span.nav-caret.fa.fa-caret-down
+                  /! Submenu
+                  ul.list-unstyled
+                    li
+                      a.active href="tables.html"
+                        i.fa.fa-angle-double-right
+                        | General Tables
+                    li
+                      a href="tables-data.html"
+                        i.fa.fa-angle-double-right
+                        | Data Table
+                /! Mainmenu with submenu
+                li.has_submenu
+                  a href="#"
+                    i.fa.fa-envelope
+                    | Mail
+                    span.nav-caret.fa.fa-caret-down
+                  /! Submenu
+                  ul.list-unstyled
+                    li
+                      a href="inbox.html"
+                        i.fa.fa-angle-double-right
+                        | Inbox
+                    li
+                      a href="mail-read.html"
+                        i.fa.fa-angle-double-right
+                        | Mail Read
+                    li
+                      a href="mail-write.html"
+                        i.fa.fa-angle-double-right
+                        | Mail Compose
+            .side-nav-block
+              h4 Menu
+              ul.list-unstyled
+                li
+                  a href="0-base.html"
+                    i.fa.fa-desktop
+                    | Blank Page
+                li
+                  a href="login.html"
+                    i.fa.fa-sign-in
+                    | Login
+                li
+                  a href="404.html"
+                    i.fa.fa-times
+                    | Error Page
+                li
+                  a href="grid.html"
+                    i.fa.fa-th-large
+                    | Grids
+                li
+                  a href="lock.html"
+                    i.fa.fa-lock
+                    | Lock
+          /! Sidebar navigation ends
+      /! Sidebar ends
+      /! Mainbar starts
+      .mainbar
+        /! Mainbar head starts
+        .main-head
+          .container
+            .row
+              .col-md-3.col-sm-4.col-xs-6
+                /! Page title
+                h2
+                  i.fa.fa-desktop.lblue
+                  | Dashboard
+              .col-md-3.col-sm-4.col-xs-6
+                /! Search block
+                .head-search
+                  form.form role="form"
+                    .input-group
+                      input.form-control placeholder="Search..." type="text"
+                        span.input-group-btn
+                          button.btn.btn-default type="button"
+                            i.fa.fa-search
+              .col-md-3.col-sm-4.hidden-xs
+                /! Notifications
+                .head-noty.text-center
+                  /! Notifications
+                  .dropdown
+                    a#notifications.mhead-icon data-toggle="dropdown" href="#"
+                      i.fa.fa-bell
+                      span.label.label-info 5
+                    /! Dropdown
+                    ul.dropdown-menu aria-labelledby="notifications" role="button"
+                      /! Dropdown menu head
+                      li.dropdown-head
+                        | Notifications
+                        span.label.label-info.pull-right 5
+                      /! Content
+                      li
+                        a href="#"
+                          /! Colored icon with text and time
+                          i.fa.fa-user
+                          | New User Registered
+                          b.pull-right 5 mins ago
+                          .clearfix
+                      li
+                        a href="#"
+                          i.fa.fa-shopping-cart
+                          | New Order for Dress
+                          b.pull-right 10 mins ago
+                          .clearfix
+                      li
+                        a href="#"
+                          i.fa.fa-sign-out
+                          | User Ravi Kumar Sign Out
+                          b.pull-right 20 hr ago
+                          .clearfix
+                      li
+                        a href="#"
+                          i.fa.fa-envelope
+                          | New Message from Ravi
+                          b.pull-right 1 day ago
+                          .clearfix
+                      li
+                        a href="#"
+                          i.fa.fa-laptop
+                          | Full Backup Completed
+                          b.pull-right 2 day ago
+                          .clearfix
+                      li.dropdown-foot.text-center
+                        a href="#"  View All
+                  /! Messages
+                  .dropdown
+                    a#messages.mhead-icon data-toggle="dropdown" href="#"
+                      i.fa.fa-envelope
+                      span.label.label-danger 5
+                    ul.dropdown-menu aria-labelledby="messages" role="button"
+                      /! Dropdown menu head
+                      li.dropdown-head
+                        | Messages
+                        span.label.label-danger.pull-right 5
+                      /! Content
+                      li
+                        a href="#"
+                          /! Title
+                          | Hello How are you?
+                          i.fa.fa-reply.pull-right
+                          /! Para
+                          span Lorem ipsum dolor sit amet something elit.
+                          .clearfix
+                      li
+                        a href="#"
+                          | What are you doing today?
+                          i.fa.fa-reply.pull-right
+                          span Lorem ipsum dolor sit amet something elit.
+                          .clearfix
+                      li
+                        a href="#"
+                          | Why don't you come here?
+                          i.fa.fa-reply.pull-right
+                          span Lorem ipsum dolor sit amet something elit.
+                          .clearfix
+                      li.dropdown-foot.text-center
+                        a href="#"  View All
+                  /! Users
+                  .dropdown
+                    a#users.mhead-icon data-toggle="dropdown" href="#"
+                      i.fa.fa-user
+                      span.label.label-success 5
+                    /! Dropdown
+                    ul.dropdown-menu.drop-users aria-labelledby="users" role="button"
+                      /! Dropdown menu head
+                      li.dropdown-head
+                        | Users
+                        span.label.label-success.pull-right 5
+                      /! Content
+                      li
+                        a href="#"
+                          /! User image
+                          img.img-responsive.img-circle alt="" src="img/user1.png" /
+                          /! User details
+                          .duser-content
+                            | Anjelina Jolie
+                            span Lorem ipsum dolor sit amet elit.
+                          .clearfix
+                      li
+                        a href="#"
+                          img.img-responsive.img-circle alt="" src="img/user2.png" /
+                          .duser-content
+                            | Brad Pitt
+                            span Lorem ipsum dolor sit amet elit.
+                          .clearfix
+                      li
+                        a href="#"
+                          img.img-responsive.img-circle alt="" src="img/user1.png" /
+                          .duser-content
+                            | Al Pacino
+                            span Lorem ipsum dolor sit amet elit.
+                          .clearfix
+                      li.dropdown-foot.text-center
+                        a href="#"  View All
+                .clearfix
+              .col-md-3.hidden-sm.hidden-xs
+                /! Head user
+                .head-user.dropdown.pull-right
+                  a#profile data-toggle="dropdown" href="#"
+                    /!
+                      | Icon
+                      | i.fa.fa-user
+                    img.img-responsive.img-circle alt="" src="img/user2.png" /
+                    /! User name
+                    | ashokram
+                    span.label.label-danger 5
+                    i.fa.fa-caret-down
+                  /! Dropdown
+                  ul.dropdown-menu aria-labelledby="profile"
+                    li
+                      a href="#"
+                        | View/Edit Profile
+                        span.badge.badge-info.pull-right 6
+                    li
+                      a href="#"  Change Settings
+                    li
+                      a href="#"
+                        | Messages
+                        span.badge.badge-danger.pull-right 5
+                    li
+                      a href="#"  Sign Out
+                .clearfix
+        /! Mainbar head ends
+        .main-content
+          .container
+            .page-content
+              /! Heading
+              .single-head
+                /! Heading
+                h3.pull-left
+                  i.fa.fa-table.purple
+                  | Tables
+                /! Bread crumbs
+                .breads.pull-right
+                  strong Nav
+                  | \:
+                  a href="#"  Home
+                  | \/
+                  a href="#"  Sign
+                  | \/ Home
+                .clearfix
+              /! Table Page
+              .page-tables
+                /! Heading
+                h4 Table #1
+                /! Table
+                .table-responsive
+                  table.table.table-hover.table-bordered
+                    thead
+                      tr
+                        th #
+                        th Name
+                        th Location
+                        th Age
+                        th Education
+                    tbody
+                      tr
+                        td 1
+                        td Ashok
+                        td India
+                        td 23
+                        td B.Tech
+                      tr
+                        td 2
+                        td Kumarasamy
+                        td USA
+                        td 22
+                        td BE
+                      tr
+                        td 3
+                        td Babura
+                        td UK
+                        td 43
+                        td PhD
+                      tr
+                        td 4
+                        td Ravi Kumar
+                        td China
+                        td 73
+                        td PUC
+                      tr
+                        td 5
+                        td Santhosh
+                        td Japan
+                        td 43
+                        td M.Tech
+                /! Pagination
+                ul.pagination.pagination-sm.pull-right
+                  li
+                    a href="#"  &laquo;
+                  li
+                    a href="#"  1
+                  li
+                    a href="#"  2
+                  li
+                    a href="#"  3
+                  li
+                    a href="#"  4
+                  li
+                    a href="#"  5
+                  li
+                    a href="#"  &raquo;
+                .clearfix
+                hr/
+                /! Horizontal Line
+                /! Heading
+                h4 Table #2
+                /! Table
+                .table-responsive
+                  table.table.table-hover.table-bordered
+                    thead
+                      tr
+                        th #
+                        th Name
+                        th Location
+                        th Date
+                        th Type
+                        th Status
+                        th Control
+                    tbody
+                      tr
+                        td 1
+                        td Ravi Kumar
+                        td India
+                        td 23/12/2013
+                        td Paid
+                        td
+                          span.label.label-success Active
+                        td
+                          button.btn.btn-xs.btn-success
+                            i.fa.fa-check
+                          button.btn.btn-xs.btn-warning
+                            i.fa.fa-pencil
+                          button.btn.btn-xs.btn-danger
+                            i.fa.fa-times
+                      tr
+                        td 2
+                        td Ravi Kumar
+                        td India
+                        td 23/12/2013
+                        td Paid
+                        td
+                          span.label.label-danger Banned
+                        td
+                          .btn-group
+                            button.btn.btn-xs.btn-success
+                              i.fa.fa-check
+                            button.btn.btn-xs.btn-warning
+                              i.fa.fa-pencil
+                            button.btn.btn-xs.btn-danger
+                              i.fa.fa-times
+                      tr
+                        td 3
+                        td Ravi Kumar
+                        td India
+                        td 23/12/2013
+                        td Paid
+                        td
+                          span.label.label-success Active
+                        td
+                          button.btn.btn-xs.btn-success
+                            i.fa.fa-check
+                          button.btn.btn-xs.btn-warning
+                            i.fa.fa-pencil
+                          button.btn.btn-xs.btn-danger
+                            i.fa.fa-times
+                      tr
+                        td 4
+                        td Vishnu Vardan
+                        td Bangkok
+                        td 03/11/2012
+                        td Paid
+                        td
+                          span.label.label-success Active
+                        td
+                          .btn-group
+                            button.btn.btn-xs.btn-success
+                              i.fa.fa-check
+                            button.btn.btn-xs.btn-warning
+                              i.fa.fa-pencil
+                            button.btn.btn-xs.btn-danger
+                              i.fa.fa-times
+                      tr
+                        td 5
+                        td Hanukkah Marsha
+                        td Singapore
+                        td 23/1/2014
+                        td Paid
+                        td
+                          span.label.label-success Free
+                        td
+                          button.btn.btn-xs.btn-success
+                            i.fa.fa-check
+                          button.btn.btn-xs.btn-warning
+                            i.fa.fa-pencil
+                          button.btn.btn-xs.btn-danger
+                            i.fa.fa-times
+                      tr
+                        td 6
+                        td Anuksha Sharma
+                        td Singapore
+                        td 23/2/2014
+                        td Paid
+                        td
+                          span.label.label-danger Banded
+                        td
+                          button.btn.btn-xs.btn-success
+                            i.fa.fa-check
+                          button.btn.btn-xs.btn-warning
+                            i.fa.fa-pencil
+                          button.btn.btn-xs.btn-danger
+                            i.fa.fa-times
+                /! Pagination
+                ul.pagination.pagination-xs.pull-right
+                  li
+                    a href="#"  &laquo;
+                  li
+                    a href="#"  1
+                  li
+                    a href="#"  2
+                  li
+                    a href="#"  3
+                  li
+                    a href="#"  4
+                  li
+                    a href="#"  5
+                  li
+                    a href="#"  &raquo;
+                .clearfix
+                hr/
+                /! Horizontal Line
+                .row
+                  .col-md-6
+                    /! Heading
+                    h4 Table #3
+                    /! Table
+                    .table-responsive
+                      table.table.table-hover.table-bordered
+                        thead
+                          tr
+                            th #
+                            th Name
+                            th Location
+                            th Education
+                        tbody
+                          tr
+                            td 1
+                            td Ashok
+                            td India
+                            td B.Tech
+                          tr
+                            td 2
+                            td Kumarasamy
+                            td USA
+                            td BE
+                          tr
+                            td 3
+                            td Babura
+                            td UK
+                            td PhD
+                          tr
+                            td 4
+                            td Ravi Kumar
+                            td China
+                            td PUC
+                          tr
+                            td 5
+                            td Santhosh
+                            td Japan
+                            td M.Tech
+                    /! Pagination
+                    ul.pagination.pagination-xs.pull-right
+                      li
+                        a href="#"  &laquo;
+                      li
+                        a href="#"  1
+                      li
+                        a href="#"  2
+                      li
+                        a href="#"  3
+                      li
+                        a href="#"  4
+                      li
+                        a href="#"  5
+                      li
+                        a href="#"  &raquo;
+                    .clearfix
+                  .col-md-6
+                    /! Heading
+                    h4 Table #4
+                    /! Table
+                    .table-responsive
+                      table.table.table-hover.table-bordered
+                        thead
+                          tr
+                            th #
+                            th Name
+                            th Location
+                            th Date
+                            th Status
+                        tbody
+                          tr
+                            td 1
+                            td Ravi Kumar
+                            td India
+                            td 23/12/2013
+                            td
+                              span.label.label-success Active
+                          tr
+                            td 2
+                            td Ravi Kumar
+                            td India
+                            td 23/12/2013
+                            td
+                              span.label.label-danger Banned
+                          tr
+                            td 3
+                            td Vishnu Vardan
+                            td Bangkok
+                            td 03/11/2012
+                            td
+                              span.label.label-success Active
+                          tr
+                            td 4
+                            td Hanukkah Marsha
+                            td Singapore
+                            td 23/1/2014
+                            td
+                              span.label.label-success Free
+                          tr
+                            td 5
+                            td Anuksha Sharma
+                            td Singapore
+                            td 23/2/2014
+                            td
+                              span.label.label-danger Banded
+                    /! Pagination
+                    ul.pagination.pagination-xs.pull-right
+                      li
+                        a href="#"  &laquo;
+                      li
+                        a href="#"  1
+                      li
+                        a href="#"  2
+                      li
+                        a href="#"  3
+                      li
+                        a href="#"  4
+                      li
+                        a href="#"  5
+                      li
+                        a href="#"  &raquo;
+                    .clearfix
+      /! Mainbar ends
+      .clearfix
