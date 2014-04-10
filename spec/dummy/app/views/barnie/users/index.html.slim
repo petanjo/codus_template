@@ -1,30 +1,328 @@
 
-= header_section
-
-
-table.table.table-bordered.table-striped.table-highlight
-  thead
-    tr
-      th.size-5-percent.text-center Id
-      th.size-20-percent.text-center Name
-      th.size-20-percent.text-center Email
-      th.size-20-percent.text-center Age
-      th.size-20-percent.text-center Actions
-
-  tbody
-  - @users.each do |user|
-    tr
-      td.text-center
-        = user.id
-      td.text-center
-        = user.name
-      td.text-center
-        = user.email
-      td.text-center
-        = user.age
-
-      td.text-center
-        = link_to 'details', barnie_user_path(user.id), class: 'btn btn-sm btn-default'
-        = link_to 'edit', edit_barnie_user_path(user.id), class: 'btn btn-sm btn-info'
-        = link_to "delete", { :action => 'destroy', :id => user.id}, :method => :delete, data: { confirm: 'Are you sure to destroy this user? His publications will not be deleted!'}, class: 'btn btn-sm btn-danger'
-
+/! Heading
+.single-head
+  /! Heading
+  h3.pull-left
+    i.fa.fa-table.purple
+    | Tables
+  /! Bread crumbs
+  .breads.pull-right
+    strong Nav
+    | \:
+    a href="#"  Home
+    | \/
+    a href="#"  Sign
+    | \/ Home
+  .clearfix
+/! Table Page
+.page-tables
+  /! Heading
+  h4 Table #1
+  /! Table
+  .table-responsive
+    table.table.table-hover.table-bordered
+      thead
+        tr
+          th #
+          th Name
+          th Location
+          th Age
+          th Education
+      tbody
+        tr
+          td 1
+          td Ashok
+          td India
+          td 23
+          td B.Tech
+        tr
+          td 2
+          td Kumarasamy
+          td USA
+          td 22
+          td BE
+        tr
+          td 3
+          td Babura
+          td UK
+          td 43
+          td PhD
+        tr
+          td 4
+          td Ravi Kumar
+          td China
+          td 73
+          td PUC
+        tr
+          td 5
+          td Santhosh
+          td Japan
+          td 43
+          td M.Tech
+  /! Pagination
+  ul.pagination.pagination-sm.pull-right
+    li
+      a href="#"  &laquo;
+    li
+      a href="#"  1
+    li
+      a href="#"  2
+    li
+      a href="#"  3
+    li
+      a href="#"  4
+    li
+      a href="#"  5
+    li
+      a href="#"  &raquo;
+  .clearfix
+  hr/
+  /! Horizontal Line
+  /! Heading
+  h4 Table #2
+  /! Table
+  .table-responsive
+    table.table.table-hover.table-bordered
+      thead
+        tr
+          th #
+          th Name
+          th Location
+          th Date
+          th Type
+          th Status
+          th Control
+      tbody
+        tr
+          td 1
+          td Ravi Kumar
+          td India
+          td 23/12/2013
+          td Paid
+          td
+            span.label.label-success Active
+          td
+            button.btn.btn-xs.btn-success
+              i.fa.fa-check
+            button.btn.btn-xs.btn-warning
+              i.fa.fa-pencil
+            button.btn.btn-xs.btn-danger
+              i.fa.fa-times
+        tr
+          td 2
+          td Ravi Kumar
+          td India
+          td 23/12/2013
+          td Paid
+          td
+            span.label.label-danger Banned
+          td
+            .btn-group
+              button.btn.btn-xs.btn-success
+                i.fa.fa-check
+              button.btn.btn-xs.btn-warning
+                i.fa.fa-pencil
+              button.btn.btn-xs.btn-danger
+                i.fa.fa-times
+        tr
+          td 3
+          td Ravi Kumar
+          td India
+          td 23/12/2013
+          td Paid
+          td
+            span.label.label-success Active
+          td
+            button.btn.btn-xs.btn-success
+              i.fa.fa-check
+            button.btn.btn-xs.btn-warning
+              i.fa.fa-pencil
+            button.btn.btn-xs.btn-danger
+              i.fa.fa-times
+        tr
+          td 4
+          td Vishnu Vardan
+          td Bangkok
+          td 03/11/2012
+          td Paid
+          td
+            span.label.label-success Active
+          td
+            .btn-group
+              button.btn.btn-xs.btn-success
+                i.fa.fa-check
+              button.btn.btn-xs.btn-warning
+                i.fa.fa-pencil
+              button.btn.btn-xs.btn-danger
+                i.fa.fa-times
+        tr
+          td 5
+          td Hanukkah Marsha
+          td Singapore
+          td 23/1/2014
+          td Paid
+          td
+            span.label.label-success Free
+          td
+            button.btn.btn-xs.btn-success
+              i.fa.fa-check
+            button.btn.btn-xs.btn-warning
+              i.fa.fa-pencil
+            button.btn.btn-xs.btn-danger
+              i.fa.fa-times
+        tr
+          td 6
+          td Anuksha Sharma
+          td Singapore
+          td 23/2/2014
+          td Paid
+          td
+            span.label.label-danger Banded
+          td
+            button.btn.btn-xs.btn-success
+              i.fa.fa-check
+            button.btn.btn-xs.btn-warning
+              i.fa.fa-pencil
+            button.btn.btn-xs.btn-danger
+              i.fa.fa-times
+  /! Pagination
+  ul.pagination.pagination-xs.pull-right
+    li
+      a href="#"  &laquo;
+    li
+      a href="#"  1
+    li
+      a href="#"  2
+    li
+      a href="#"  3
+    li
+      a href="#"  4
+    li
+      a href="#"  5
+    li
+      a href="#"  &raquo;
+  .clearfix
+  hr/
+  /! Horizontal Line
+  .row
+    .col-md-6
+      /! Heading
+      h4 Table #3
+      /! Table
+      .table-responsive
+        table.table.table-hover.table-bordered
+          thead
+            tr
+              th #
+              th Name
+              th Location
+              th Education
+          tbody
+            tr
+              td 1
+              td Ashok
+              td India
+              td B.Tech
+            tr
+              td 2
+              td Kumarasamy
+              td USA
+              td BE
+            tr
+              td 3
+              td Babura
+              td UK
+              td PhD
+            tr
+              td 4
+              td Ravi Kumar
+              td China
+              td PUC
+            tr
+              td 5
+              td Santhosh
+              td Japan
+              td M.Tech
+      /! Pagination
+      ul.pagination.pagination-xs.pull-right
+        li
+          a href="#"  &laquo;
+        li
+          a href="#"  1
+        li
+          a href="#"  2
+        li
+          a href="#"  3
+        li
+          a href="#"  4
+        li
+          a href="#"  5
+        li
+          a href="#"  &raquo;
+      .clearfix
+    .col-md-6
+      /! Heading
+      h4 Table #4
+      /! Table
+      .table-responsive
+        table.table.table-hover.table-bordered
+          thead
+            tr
+              th #
+              th Name
+              th Location
+              th Date
+              th Status
+          tbody
+            tr
+              td 1
+              td Ravi Kumar
+              td India
+              td 23/12/2013
+              td
+                span.label.label-success Active
+            tr
+              td 2
+              td Ravi Kumar
+              td India
+              td 23/12/2013
+              td
+                span.label.label-danger Banned
+            tr
+              td 3
+              td Vishnu Vardan
+              td Bangkok
+              td 03/11/2012
+              td
+                span.label.label-success Active
+            tr
+              td 4
+              td Hanukkah Marsha
+              td Singapore
+              td 23/1/2014
+              td
+                span.label.label-success Free
+            tr
+              td 5
+              td Anuksha Sharma
+              td Singapore
+              td 23/2/2014
+              td
+                span.label.label-danger Banded
+      /! Pagination
+      ul.pagination.pagination-xs.pull-right
+        li
+          a href="#"  &laquo;
+        li
+          a href="#"  1
+        li
+          a href="#"  2
+        li
+          a href="#"  3
+        li
+          a href="#"  4
+        li
+          a href="#"  5
+        li
+          a href="#"  &raquo;
+      .clearfix
