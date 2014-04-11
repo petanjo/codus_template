@@ -3,6 +3,8 @@ PATH
   specs:
     codus_templates (0.0.1.2)
       sass-rails (~> 4.0)
+      show_for
+      simple_form
 
 GEM
   remote: https://rubygems.org/
@@ -52,6 +54,9 @@ GEM
       has_scope (~> 0.6.0.rc)
       responders (~> 1.0.0.rc)
     json (1.8.1)
+    kaminari (0.15.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -139,9 +144,8 @@ DEPENDENCIES
   capybara
   codus_templates!
   inherited_resources (= 1.4.1)
+  kaminari
   rails (~> 4.1.0)
   rspec-rails
-  show_for
-  simple_form
   slim
   sqlite3

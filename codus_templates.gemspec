@@ -19,9 +19,10 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "rails", "~> 4.1.0"
   s.add_dependency "sass-rails", "~> 4.0"
+  s.add_dependency 'show_for'
+  s.add_dependency 'simple_form'
+  s.add_development_dependency 'kaminari'
   s.add_development_dependency 'rspec-rails'
-  s.add_development_dependency 'show_for'
-  s.add_development_dependency 'simple_form'
   s.add_development_dependency 'inherited_resources', '1.4.1'
   s.add_development_dependency 'capybara'
   s.add_development_dependency "sqlite3"
