@@ -17,15 +17,13 @@ module CodusTemplates
 
         options = {
           name: panel_name,
-          class: 'widget-box',
+          class: 'widget',
           id: ""
         }.merge(custom_options)
 
-        content_tag(:div, class: options[:class], id: options[:id]) do
-          title = content_tag(:div, "<h3 class='lighter'>#{options[:name]}</h3>".html_safe , class: 'widget-header widget-header-blue widget-header-flat')
-          body = content_tag(:div, class: 'widget-body') do
-            content_tag(:div, capture(&block),class: 'widget-main')
-          end
+        default = content_tag(:div, class: options[:class], id: options[:id]) do
+          title = content_tag(:div, "<h3 class='lighter'>#{options[:name]}</h3>".html_safe , class: 'widget-head br-blue')
+          body = content_tag(:div, capture(&block), class: 'widget-body no-padd')
           title + body
         end
       end
@@ -80,37 +78,37 @@ module CodusTemplates
         end
       end
 
-      def show_panel_buttons_section(custom_options = {})
+      def show_buttons_section(custom_options = {})
         options = {
           back_button_name: get_translation_for_button(:back),
           edit_button_name: get_translation_for_button(:edit)
         }.merge(custom_options)
 
-        buttons = content_tag(:div, class: 'wizard-actions') do
+        buttons = content_tag(:div, class: 'widget-foot') do
           if options[:path_to_return]
-            back_link = link_to("<i class='icon-arrow-left'></i> #{options[:back_button_name]}".html_safe, options[:path_to_return].to_sym, {class: 'btn btn-prev'})
+            back_link = link_to("#{options[:back_button_name]}".html_safe, options[:path_to_return].to_sym, {class: 'btn'})
           else
             begin
-              back_link = link_to("<i class='icon-arrow-left'></i> #{options[:back_button_name]}".html_safe, {action: 'index'}, {class: 'btn btn-prev'})
+              back_link = link_to("#{options[:back_button_name]}".html_safe, {action: 'index'}, {class: 'btn'})
             rescue
-              back_link = link_to("<i class='icon-arrow-left'></i> #{options[:back_button_name]}".html_safe, :back, {class: 'btn btn-prev'})
+              back_link = link_to("#{options[:back_button_name]}".html_safe, :back, {class: 'btn'})
             end
           end
           begin
-            edit_link = link_to("<i class='icon-edit'></i> #{options[:edit_button_name]}".html_safe, {action: 'edit'}, {class: 'btn btn-info'})
+            edit_link = link_to("#{options[:edit_button_name]}".html_safe, {action: 'edit'}, {class: 'btn btn-info'})
           rescue
             edit_link = ''
           end
 
           begin
-            edit_link = link_to("<i class='icon-edit'></i> #{options[:edit_button_name]}".html_safe, {action: 'edit'}, {class: 'btn btn-info'})
+            edit_link = link_to("#{options[:edit_button_name]}".html_safe, {action: 'edit'}, {class: 'btn btn-info'})
           rescue
             edit_link = ''
           end
 
           back_link + edit_link
         end
-        ("<hr/>".html_safe + buttons)
+        ("<hr/>".html_safe + buttons).html_safe
       end
     end
   end
