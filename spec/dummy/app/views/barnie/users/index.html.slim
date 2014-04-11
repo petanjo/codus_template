@@ -1,26 +1,25 @@
 = header_section
-  table.table.table-hover.table-bordered
-    thead
+table.table.table-hover.table-bordered
+  thead
+    tr
+      th #
+      th Name
+      th Email
+      th Age
+      th.text-center Control
+  tbody
+    - @users.each do |user|
       tr
-        th #
-        th Name
-        th Email
-        th Age
-        th Control
-    tbody
-      - @users.each do |user|
-        tr
-          td = user.id
-          td = user.name
-          td = user.email
-          td
-            span.label.label-success = user.age
-
-          td
-            a.btn.btn-xs.btn-success
-              i.fa.fa-check
-            a.btn.btn-xs.btn-warning
-              i.fa.fa-pencil
-            a.btn.btn-xs.btn-danger
-              i.fa.fa-times
+        td = user.id
+        td = user.name
+        td = user.email
+        td
+          span.label.label-success = user.age
+        td.text-center
+          = link_to(barnie_user_path(user.id), class: ' btn btn-xs btn-success') do
+            i.fa.fa-check
+          = link_to(edit_barnie_user_path(user.id), class: ' btn btn-xs btn-warning') do
+            i.fa.fa-pencil
+          = link_to(barnie_user_path(user.id), class: ' btn btn-xs btn-danger') do
+            i.fa.fa-times
 

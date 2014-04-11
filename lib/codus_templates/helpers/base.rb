@@ -39,27 +39,35 @@ module CodusTemplates
 
         begin
           equivalent_actions_hash = {
-            "edit" => :update,
-            "new" => :create,
-            "remove" => :destroy
+            "update" => :edit,
+            "create" => :new
           }
 
           if equivalent_actions_hash.has_key?(params[:action])
-            heeader_title = I18n.t!(params[:action],
+            header_title = I18n.t!(params[:action],
               scope: [:codus_templates, :header_titles, :controllers, params[:controller].parameterize(".")],
               default: equivalent_actions_hash[params[:action]], resource_name: resource_name)
           else
-            heeader_title = I18n.t!(params[:action],
+            header_title = I18n.t!(params[:action],
               scope: [:codus_templates, :header_titles, :controllers, params[:controller].parameterize(".")],
               resource_name: resource_name)
           end
         rescue I18n::MissingTranslationData => ex
-          heeader_title = I18n.t(params[:action],
-            scope: [:codus_templates, :header_titles, :defaults],
-            resource_name: resource_name)
+
+          if equivalent_actions_hash.has_key?(params[:action])
+            header_title = I18n.t(params[:action],
+              scope: [:codus_templates, :header_titles, :defaults],
+              default: equivalent_actions_hash[params[:action]], resource_name: resource_name)
+
+          else
+            header_title = I18n.t(params[:action],
+              scope: [:codus_templates, :header_titles, :defaults],
+              resource_name: resource_name)
+          end
+
         end
 
-        "#{heeader_title}"
+        "#{header_title}"
       end
 
       def multilanguage_attribute_field_for(attribute_name, simple_form_builder, custom_options = {})

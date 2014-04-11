@@ -835,6 +835,15 @@ form label{
 	margin-top:-2px;
 }
 
+.table tr td {
+	.btn {
+		margin-right: 5px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
 /* Main content */
 
 .main-content{
