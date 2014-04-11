@@ -1,0 +1,6 @@
+= header_section
+= panel_section(name: 'Informações do Usuário') do
+  = show_for @user do |u|
+    = u.attribute :name
+    = u.attribute :email
+  = show_panel_buttons_section

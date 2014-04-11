@@ -34,10 +34,10 @@ module CodusTemplates
         options = {
           title: get_title_text_for_header_section,
           right_links: get_right_links_for_header_section,
-          header_tag: :h1
+          header_tag: :h2
         }.merge(custom_options)
 
-        content_tag(:div, class: 'page-header') do
+        content_tag(:div, class: 'single-head') do
           content_tag(options[:header_tag]) do
             ("<span class='text'>#{options[:title]}</span>" + options[:right_links].to_s).html_safe
           end
@@ -46,14 +46,14 @@ module CodusTemplates
 
       def get_right_links_for_header_section
         begin
-          right_links = custom_options.has_key?(:right_links) ? '' : link_to(get_translation_for_button(:back), {action: 'index'}, {class: 'btn btn-sm btn-primary pull-right'})
+          right_links = custom_options.has_key?(:right_links) ? '' : link_to(get_translation_for_button(:back), {action: 'index'}, {class: 'btn btn-sm btn-default pull-right'})
         rescue
           right_links = ""
         end
 
         if params[:action].match(/index/)
           begin
-            right_links = link_to("<span class='glyphicon glyphicon-plus'></span> #{get_translation_for_button(:add)}".html_safe, { action: :new }, class: 'btn btn-sm btn-success pull-right cpy-add-link')
+            right_links = link_to("<i class=\"fa fa-plus white\"></i> #{get_translation_for_button(:add)}".html_safe, { action: :new }, class: 'btn btn-sm btn-primary pull-right cpy-add-link')
           rescue
             right_links = ""
           end
