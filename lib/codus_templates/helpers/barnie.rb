@@ -67,14 +67,16 @@ module CodusTemplates
           back_button_name: get_translation_for_button(:back),
           submit_button_name: get_translation_for_button(:save)
         }.merge(custom_options)
-        content_tag(:div, class: 'form-actions wizard-actions form-buttons') do
-          begin
-            back_link = link_to("<i class='icon-arrow-left'></i> #{options[:back_button_name]}".html_safe, {action: 'index'}, {class: 'btn btn-prev'})
-          rescue
-            back_link = link_to("<i class='icon-arrow-left'></i> #{options[:back_button_name]}".html_safe, :back, {class: 'btn btn-prev'})
+        content_tag(:div, class: 'form-group') do
+          content_tag(:div, class: 'col-lg-offset-3 col-lg-9') do
+            begin
+              back_link = link_to("<i class='icon-arrow-left'></i> #{options[:back_button_name]}".html_safe, {action: 'index'}, {class: 'btn btn-prev'})
+            rescue
+              back_link = link_to("<i class='icon-arrow-left'></i> #{options[:back_button_name]}".html_safe, :back, {class: 'btn btn-prev'})
+            end
+            submit_button = "<button class='btn btn-primary cpy-submit-button'>#{options[:submit_button_name]}</button> ".html_safe
+            back_link + submit_button
           end
-          submit_button = "<button class='btn btn-success btn-next cpy-submit-button'>#{options[:submit_button_name]} <i class='icon-arrow-right icon-on-right'></i></button> ".html_safe
-          back_link + submit_button
         end
       end
 
