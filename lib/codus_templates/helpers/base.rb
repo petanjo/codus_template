@@ -18,14 +18,6 @@ module CodusTemplates
         alerts.html_safe if alerts
       end
 
-      def pagination_links_for(resource_list, param_name = 'page', custom_params = {})
-        paginate(resource_list, param_name: "#{param_name}", params: custom_params, :theme => 'ace_template')
-      end
-
-      def pagination_ajax_links_for(resource_list, param_name = 'page', custom_params = {})
-        paginate(resource_list, param_name: "#{param_name}", params: custom_params, :theme => 'ace_template', :remote => true)
-      end
-
       def get_title_text_for_header_section
         begin
           resource_class = controller_name.singularize.capitalize.constantize

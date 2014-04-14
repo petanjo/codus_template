@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    codus_templates (0.0.1.4)
+    codus_templates (0.0.1.6)
       sass-rails (~> 4.0)
       show_for
       simple_form

@@ -15,3 +15,4 @@ gemspec
 gem 'slim'
 gem 'show_for'
 gem 'simple_form'
+gem 'kaminari'
