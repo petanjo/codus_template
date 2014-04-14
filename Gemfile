@@ -13,3 +13,5 @@ gemspec
 # To use debugger
 # gem 'debugger'
 gem 'slim'
+gem 'show_for'
+gem 'simple_form'

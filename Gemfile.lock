@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    codus_templates (0.0.1.2)
+    codus_templates (0.0.1.4)
       sass-rails (~> 4.0)
       show_for
       simple_form
@@ -147,5 +147,7 @@ DEPENDENCIES
   kaminari
   rails (~> 4.1.0)
   rspec-rails
+  show_for
+  simple_form
   slim
   sqlite3
