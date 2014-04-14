@@ -1,15 +1,10 @@
-//*= require ./bootstrap.min
-//*= require ./font-awesome.min
-//*= require ./chosen
-//*= require ./datepicker
-//*= require ./jquery.gritter
+@import 'bootstrap.min'
+@import 'font-awesome.min'
+@import 'chosen'
+@import 'datepicker'
+@import 'jquery.gritter'
 
-//*= require ./ace-fonts
+@import 'ace-fonts'
 
-//*= require ./custom_components/modal
-//*= require ./custom_components/photo-list
-//*= require_self
-
-@for $i from 1 through 100
-  .size-#{$i}-percent
-    width: 1% * $i
+@import 'custom_components/modal'
+@import 'custom_components/photo-list'
