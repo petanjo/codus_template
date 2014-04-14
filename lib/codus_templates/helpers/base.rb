@@ -6,12 +6,12 @@ module CodusTemplates
       def display_flash_message
         return if flash.empty?
         alerts = flash.inject('') do |content, (key, message)|
-          next unless [:success, :notice, :error, :danger, :warning, :info].include?(key)
-          key = :success if key == :notice
-          key = :danger if key == :error
+          next unless ["success", "notice", "error", "danger", "warning", "info"].include?(key)
+          key = "success" if key == "notice"
+          key = "danger" if key == "error"
 
           alert = content_tag :div, :class => "alert alert-#{key}" do
-            content_tag(:p, message) unless message.blank?  || key == :timedout
+            content_tag(:p, message) unless message.blank?  || key == "timedout"
           end.html_safe
           content << alert.html_safe
         end
