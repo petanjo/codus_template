@@ -18,12 +18,13 @@ module CodusTemplates
         options = {
           name: panel_name,
           class: 'widget',
-          id: ""
+          id: "",
+          body_class: 'widget-body'
         }.merge(custom_options)
 
         default = content_tag(:div, class: options[:class], id: options[:id]) do
           title = content_tag(:div, "<h3 class='lighter'>#{options[:name]}</h3>".html_safe , class: 'widget-head br-blue')
-          body = content_tag(:div, capture(&block), class: 'widget-body no-padd')
+          body = content_tag(:div, capture(&block), class: options[:body_class])
           title + body
         end
       end
