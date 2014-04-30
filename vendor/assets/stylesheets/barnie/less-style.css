@@ -417,11 +417,17 @@ a:focus {
 /*******************/
 form input[type="text"].error,
 form input[type="password"].error,
-form input[type="email"].error {
+form input[type="email"].error,
+form .has-error input[type="text"],
+form .has-error input[type="password"],
+form .has-error input[type="email"] {
   border: 1px solid #f75353 !important;
 }
+
 form select.error,
-form textarea.error {
+form textarea.error,
+form .has-error select,
+form .has-error text {
   border: 1px solid #f75353 !important;
 }
 form label.error {

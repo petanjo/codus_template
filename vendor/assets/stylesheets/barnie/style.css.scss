@@ -1668,9 +1668,12 @@ form label{
 .login-page .nav-tabs li  a{
    border:0px !important;
    margin:0px !important;
+   background: #333;
    color:#fff;
    border-radius:0px;
-   padding:10px 14px;
+   padding: 10px 0;
+   padding-left: 0;
+   padding-right: 0;
    border-right:1px solid rgba(0,0,0,0.1) !important;
    border-top:1px solid rgba(0,0,0,0.1) !important;
    -webkit-transition: background 0.7s ease;
@@ -1694,7 +1697,7 @@ form label{
 }
 
 .login-page .nav-tabs li  a:hover{
-   background:#333 !important;
+   background:#32c8de !important;
    -webkit-transition: background 0.7s ease;
    -moz-transition: background 0.7s ease;
    -o-transition: background 0.7s ease;
@@ -1703,7 +1706,7 @@ form label{
 }
 
 .login-page .nav-tabs li.active a{
-   background:#333 !important;
+   background:#32c8de !important;
    color:#fff !important;
 }
 
