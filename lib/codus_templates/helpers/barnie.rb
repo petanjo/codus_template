@@ -112,5 +112,6 @@ module CodusTemplates
         ("<hr/>".html_safe + buttons).html_safe
       end
     end
+
   end
 end

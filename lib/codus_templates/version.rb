@@ -1,3 +1,3 @@
 module CodusTemplates
-  VERSION = "0.0.1.6c"
+  VERSION = "0.0.1.6d"
 end
