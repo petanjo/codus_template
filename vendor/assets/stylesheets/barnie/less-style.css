@@ -51,7 +51,7 @@ a:focus {
   color: #32c8de;
 }
 .blue {
-  color: #609cec;
+  color: #0095c5;
 }
 .orange {
   color: #f78153;
@@ -60,7 +60,7 @@ a:focus {
   color: #fcd419;
 }
 .purple {
-  color: #cb79e6;
+  color: #a00042;
 }
 .rose {
   color: #ff61e7;
@@ -90,7 +90,7 @@ a:focus {
   background-color: #32c8de;
 }
 .br-blue {
-  background-color: #609cec;
+  background-color: #0095c5;
 }
 .br-orange {
   background-color: #f78153;
@@ -99,7 +99,7 @@ a:focus {
   background-color: #fcd419;
 }
 .br-purple {
-  background-color: #cb79e6;
+  background-color: #a00042;
 }
 .br-rose {
   background-color: #ff61e7;
@@ -110,10 +110,14 @@ a:focus {
 /************************/
 /* Button color classes */
 /************************/
+.btn {
+  border: 0;
+}
+
 .btn.btn-default {
   background: #f9f9f9;
   color: #666666 !important;
-  border: 1px solid #aaaaaa;
+  border: 0;
 }
 .btn.btn-default:hover {
   background: #eeeeee;
@@ -144,10 +148,10 @@ a:focus {
   background: #2bbdd2;
 }
 .btn.btn-primary {
-  background: #609cec;
+  background: #0095c5;
 }
 .btn.btn-primary:hover {
-  background: #528fe2;
+  background: #007CAC;
 }
 .btn.btn-warning {
   background: #f78153;
@@ -164,12 +168,12 @@ a:focus {
   background: #e9c51b;
 }
 .btn.btn-purple {
-  background: #cb79e6;
+  background: #a00042;
   color: #ffffff;
   border: 1px solid #b75bd6;
 }
 .btn.btn-purple:hover {
-  background: #b75bd6;
+  background: #870037;
 }
 .btn.btn-rose {
   background: #ff61e7;
@@ -212,7 +216,7 @@ a:focus {
   background: #32c8de;
 }
 .label.label-primary {
-  background: #609cec;
+  background: #0095c5;
 }
 .label.label-warning {
   background: #f78153;
@@ -221,7 +225,7 @@ a:focus {
   background: #fcd419;
 }
 .label.label-purple {
-  background: #cb79e6;
+  background: #a00042;
 }
 .label.label-rose {
   background: #ff61e7;
@@ -237,7 +241,7 @@ a:focus {
   background: #eeeeee;
 }
 .badge.badge-primary {
-  background: #609cec;
+  background: #0095c5;
 }
 .badge.badge-success {
   background: #51d466;
@@ -261,7 +265,7 @@ a:focus {
   background: #f78153;
 }
 .badge.badge-purple {
-  background: #cb79e6;
+  background: #a00042;
 }
 /****************/
 /* Progress bar */
@@ -276,7 +280,7 @@ a:focus {
   background: #32c8de;
 }
 .progress-bar-primary {
-  background: #609cec;
+  background: #0095c5;
 }
 .progress-bar-warning {
   background: #f78153;
@@ -298,7 +302,7 @@ a:focus {
   background-color: #f78153;
 }
 .sw-blue .onoffswitch-inner:before {
-  background-color: #609cec;
+  background-color: #0095c5;
 }
 /**********************/
 /* Slider UI Elements */
@@ -308,8 +312,8 @@ a:focus {
   border-color: #f75353 !important;
 }
 .slider-blue .ui-widget-header {
-  background: #609cec !important;
-  border-color: #609cec !important;
+  background: #0095c5 !important;
+  border-color: #0095c5 !important;
 }
 .slider-green .ui-widget-header {
   background: #51d466 !important;
@@ -324,8 +328,8 @@ a:focus {
   border-color: #f78153 !important;
 }
 .slider-violet .ui-widget-header {
-  background: #cb79e6 !important;
-  border-color: #cb79e6 !important;
+  background: #a00042 !important;
+  border-color: #a00042 !important;
 }
 /*************/
 /* Nav Tabs  */
