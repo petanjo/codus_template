@@ -110,6 +110,13 @@ module CodusTemplates
         end
         ("<hr/>".html_safe + buttons)
       end
+
+      def pagination_themed(resource_list, options = {})
+        final_options = {
+          :theme => 'ace_template'
+        }.merge(options)
+        paginate(resource_list, final_options)
+      end
     end
   end
 end

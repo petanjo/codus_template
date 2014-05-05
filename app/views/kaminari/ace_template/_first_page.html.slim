@@ -1,0 +1,4 @@
+/ / Link to the "First" page
+li.first
+  == link_to_unless current_page.first?, '<<', url, :remote => remote
+

@@ -111,7 +111,13 @@ module CodusTemplates
         end
         ("<hr/>".html_safe + buttons).html_safe
       end
-    end
 
+      def pagination_themed(resource_list, options = {})
+        final_options = {
+          :theme => 'barnie_template'
+        }.merge(options)
+        paginate(resource_list, final_options)
+      end
+    end
   end
 end
