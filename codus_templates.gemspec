@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir["spec/**/*"]
 
   s.add_development_dependency "rails", "~> 4.1.0"
-  s.add_dependency "sass-rails", "~> 4.0"
+  s.add_dependency "sass-rails", "~> 6.0"
   s.add_dependency 'show_for'
   s.add_dependency 'simple_form'
   s.add_development_dependency 'kaminari'
