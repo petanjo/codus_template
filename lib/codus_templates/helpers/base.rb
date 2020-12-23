@@ -37,11 +37,11 @@ module CodusTemplates
 
           if equivalent_actions_hash.has_key?(params[:action])
             header_title = I18n.t!(params[:action],
-              scope: [:codus_templates, :header_titles, :controllers, params[:controller].parameterize(".")],
+              scope: [:codus_templates, :header_titles, :controllers, params[:controller].parameterize(separator: '.')],
               default: equivalent_actions_hash[params[:action]], resource_name: resource_name)
           else
             header_title = I18n.t!(params[:action],
-              scope: [:codus_templates, :header_titles, :controllers, params[:controller].parameterize(".")],
+              scope: [:codus_templates, :header_titles, :controllers, params[:controller].parameterize(separator: '.')],
               resource_name: resource_name)
           end
         rescue I18n::MissingTranslationData => ex
@@ -116,7 +116,7 @@ module CodusTemplates
 
       def get_translation_for_button(button_name)
         begin
-          I18n.t!(button_name, scope: [:codus_templates, :buttons_titles, :controllers, params[:controller].parameterize(".")])
+          I18n.t!(button_name, scope: [:codus_templates, :buttons_titles, :controllers, params[:controller].parameterize(separator: '.')])
         rescue I18n::MissingTranslationData => ex
           I18n.t(button_name.to_sym, scope: [:codus_templates, :buttons_titles, :defaults])
         end
